@@ -2,7 +2,7 @@ class Tarefa{
 
     constructor(){
     this.arrayTarefa = [];
-       
+       this.id = 1;
 
 
     }
@@ -25,12 +25,14 @@ class Tarefa{
         for(let i= 0; i< this.arrayTarefa.length; i++ ){
         let tr = tbody.insertRow();//cria uma nova linha dentro da tabela (tbody)
 
+        let tdId = tr.insertCell();
         let tdDescricao = tr.insertCell();//insere uma nova coluna e insere ao tdDescricao
         let tdAutor = tr.insertCell();
         let tdDepartamento = tr.insertCell(); 
         let tdImportancia= tr.insertCell(); 
         let tdAcao = tr.insertCell();
 //pegando os i pra adicionar os campos
+        tdId.innerText = this.arrayTarefa[i].id;
         tdDescricao.innerText = this.arrayTarefa[i].nomeDescricao;
         tdAutor.innerText = this.arrayTarefa[i].nomeAutor;
         tdDepartamento.innerText = this.arrayTarefa[i].nomeDepartamento;
@@ -45,9 +47,11 @@ class Tarefa{
 
         let imgDel = document.createElement('img');
         imgDel.src= './img/del.png';
-        imgDel.setAttribute("onclick","tarefa.deletar()")
+        imgDel.setAttribute("onclick","tarefa.deletar("+this.arrayTarefa[i].id+")");
 
         tdAcao.appendChild(imgDel);
+
+        console.log(this.arrayTarefa);
         }
 
     }
@@ -55,13 +59,13 @@ class Tarefa{
 
     adicionar(tarefa){
         this.arrayTarefa.push(tarefa);
-
+    this.id ++;
 
     }
 
     lerDados(){
         let tarefa = {}
-
+        tarefa.id = this.id;
         tarefa.nomeDescricao = document.getElementById('idDescricao').value;
         tarefa.nomeAutor = document.getElementById('idAutor').value;
         tarefa.nomeDepartamento = document.getElementById('idDepartamento').value;
@@ -96,8 +100,18 @@ class Tarefa{
         document.getElementById('idDepartamento').value ='';
         document.getElementById('idImportancia').value ='';
     }
-    deletar(){
-        alert('teste delete'); 
+    deletar(id){
+
+        let tbody = document.getElementById('tbody');
+        
+for (let i = 0; i<this.arrayTarefa.length; i++){
+    if(this.arrayTarefa[i].id == id){
+        this.arrayTarefa.splice(i,1);
+        tbody.deleteRow(i);
+    }
+}
+
+       
     }
 }
 
