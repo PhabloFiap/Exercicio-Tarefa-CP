@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa 2.0</title>
+
+    <link rel="stylesheet" href="./style/estilo.css">
+    <script src="./script/script.js " defer></script>
+
+</head>
+<body>
+    <form action="#" method="input">
+       
+        <fieldset>
+        <div class="get">
+            <label for="descricao">Descricao</label>
+            <input type="text", name="descricao" id="idDescricao" placeholder="Descricao">
+        </div>
+
+        <div class="get">
+            <label for="autor">Autor</label>
+            <input type="text", name="autor" id="idAutor" placeholder="Autor">
+        </div>
+
+        <div class="get">
+            <label for="departamento">Departamento</label>
+            <input type="text", name="departamento" id="idDepartamento" placeholder="Departamento">
+        </div>
+
+        <div class="get">
+            <label for="importancia">Importancia</label>
+            <input type="text", name="importancia" id="idImportancia" placeholder="Importancia">
+        </div>
+
+        <div class="card">
+            <button onclick="tarefa.salvar ()">Salvar</button>
+            <button onclick="tarefa.cancelar()">Cancelar</button>
+        </div>
+        
+        
+    </fieldset>
+
+    <div class="content">
+        <table border="1">
+        <thead>
+            <th class="center">Descricao</th>
+            <th>Autor</th>
+            <th>Departamento</th>
+            <th>Importancia</th>
+            <th>Acoes (teste)</th>
+        </thead>    
+        <tbody id="tbody">
+        
+        </tbody>
+        </table>
+    </div>
+
+</form>
+
+</body>
+</html>
