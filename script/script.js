@@ -7,6 +7,23 @@ class Tarefa{
 
     }
 
+    // filtrar(){
+    //     const resultadoFiltro = document.getElementById('importanciaOpcao').value;
+       
+            
+    //         resultadoFiltro.sort(() =>{
+                
+    //         })
+                
+            
+
+        
+    // }
+    
+
+
+
+
     salvar(){
        let tarefa = this.lerDados();
         console.log(tarefa);
@@ -69,7 +86,7 @@ class Tarefa{
         tarefa.nomeDescricao = document.getElementById('idDescricao').value;
         tarefa.nomeAutor = document.getElementById('idAutor').value;
         tarefa.nomeDepartamento = document.getElementById('idDepartamento').value;
-        tarefa.nomeImportancia = document.getElementById('idImportancia').value;
+        tarefa.nomeImportancia = document.getElementById('importanciaOpcao').value;
         
         return tarefa;  
       }
@@ -98,7 +115,7 @@ class Tarefa{
         document.getElementById('idDescricao').value = '';
         document.getElementById('idAutor').value ='';
         document.getElementById('idDepartamento').value ='';
-        document.getElementById('idImportancia').value ='';
+        // document.getElementById('idImportancia').value ='';
     }
     deletar(id){
 
@@ -113,6 +130,9 @@ for (let i = 0; i<this.arrayTarefa.length; i++){
 
        
     }
+
+
+    
 }
 
 var tarefa = new Tarefa()
